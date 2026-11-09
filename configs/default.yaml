@@ -1,0 +1,23 @@
+seed: 42
+sample_rate: 16000
+n_mels: 64
+n_mfcc: 40
+n_fft: 1024
+hop_length: 256
+batch_size: 8
+epochs: 30
+learning_rate: 0.001
+weight_decay: 0.0001
+num_workers: 0
+labels:
+  - angry
+  - fearful
+  - happy
+  - neutral
+  - sad
+label_ar:
+  angry: غاضب
+  fearful: خائف
+  happy: سعيد
+  neutral: محايد
+  sad: حزين
