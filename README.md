@@ -12,6 +12,17 @@ A PyTorch-based pipeline for classifying speech recordings into five emotion cat
 - `src/audio.py` — audio loading, Log-Mel and MFCC extraction.
 - `src/data.py` — metadata validation, dataset and batch padding.
 
+## Web interface (Arabic)
+
+The repository includes an Arabic Streamlit interface for inference with a trained checkpoint.
+
+1. Install dependencies: `python -m pip install -r requirements.txt`
+2. Train a model and obtain its checkpoint, for example `artifacts/cnn/best.pt`. Training requires the dataset and speaker-independent metadata described below.
+3. Start the interface from the repository root: `streamlit run streamlit_app.py`
+4. Choose the same architecture used for training in the sidebar, upload its `best.pt` file, upload a WAV, MP3, OGG, FLAC, or M4A recording, then press **تحليل المشاعر**.
+
+Supported architectures: CNN, CNN-BiLSTM-Attention, LSTM, GRU, and MLP. CNN architectures use Log-Mel features; LSTM/GRU/MLP use MFCC features. A trained checkpoint is required; the interface does not generate predictions from an untrained model.
+
 ## Dataset setup
 
 Place the dataset under `data/` and provide `data/metadata_group_split.csv` with at least `file_name`, `emotion`, and `new_split` columns. The split values must be `train`, `validation`, or `test`. The loader enforces speaker-independent splits to avoid speaker leakage.
