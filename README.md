@@ -1,6 +1,6 @@
-# YemenAI — Audio Emotion Recognition Pipeline
+# YemenVoice — Yemeni Speech Emotion Recognition
 
-A PyTorch-based pipeline for classifying speech recordings into five emotion categories: angry, fearful, happy, neutral, and sad.
+A PyTorch-based system for recognizing emotions in Yemeni speech recordings. It classifies audio into five categories: angry, fearful, happy, neutral, and sad. The project includes audio preprocessing, speaker-independent training/evaluation pipelines, multiple deep-learning architectures, and an Arabic web interface.
 
 ## Project structure
 
