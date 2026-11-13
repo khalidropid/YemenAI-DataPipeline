@@ -14,7 +14,7 @@ LABELS = ["angry", "fearful", "happy", "neutral", "sad"]
 LABEL_AR = {"angry": "غاضب", "fearful": "خائف", "happy": "سعيد", "neutral": "محايد", "sad": "حزين"}
 MODEL_NAMES = {"CNN": "cnn", "CNN + BiLSTM + Attention": "cnn_bilstm_attention", "LSTM": "lstm", "GRU": "gru", "MLP": "mlp"}
 
-st.set_page_config(page_title="YemenAI | تحليل المشاعر الصوتية", page_icon="🎙️", layout="wide")
+st.set_page_config(page_title="YemenVoice | تحليل المشاعر الصوتية", page_icon="🎙️", layout="wide")
 
 @st.cache_data
 def read_config():
@@ -66,7 +66,7 @@ def main():
     """, unsafe_allow_html=True)
     st.markdown("""
     <div class="hero" dir="rtl">
-      <h1>🎙️ YemenAI — نظام تحليل المشاعر الصوتية</h1>
+      <h1>🎙️ YemenVoice — نظام التعرّف على المشاعر الصوتية</h1>
       <p>ارفع تسجيلاً صوتياً، واختر النموذج المدرّب، ثم اعرض نتيجة تصنيف المشاعر الخمسة ودرجات الثقة.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -83,7 +83,7 @@ def main():
         st.write(f"عدد فئات المشاعر: **{len(LABELS)}**")
         st.write("الميزات: **Log-Mel** أو **MFCC** حسب النموذج")
         st.divider()
-        st.caption("YemenAI • Audio Emotion Recognition")
+        st.caption("YemenVoice • Yemeni Speech Emotion Recognition")
 
     left, right = st.columns([1.15, .85], gap="large")
     with left:
@@ -140,7 +140,7 @@ def main():
             st.info("تحقق من توافق النموذج المختار مع ملف checkpoint، ومن أن الملف يحتوي على model_state وأن النموذج قد تم تدريبه مسبقاً.")
 
     st.divider()
-    st.markdown("<div class='muted' dir='rtl' style='text-align:center'>YemenAI — مشروع بحثي للتعرف على المشاعر من الكلام | غاضب، خائف، سعيد، محايد، حزين</div>", unsafe_allow_html=True)
+    st.markdown("<div class='muted' dir='rtl' style='text-align:center'>YemenVoice — نظام التعرّف على المشاعر من الكلام | غاضب، خائف، سعيد، محايد، حزين</div>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
